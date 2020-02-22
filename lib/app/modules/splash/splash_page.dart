@@ -29,6 +29,6 @@ class _SplashPageState extends ModularState<SplashPage, SplashController> with A
 
   @override
   void afterFirstLayout(BuildContext context) {
-    controller.pushToLogin();
+    // controller.pushToLogin();
   }
 }
