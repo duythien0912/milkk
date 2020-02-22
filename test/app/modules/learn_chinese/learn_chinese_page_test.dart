@@ -1,14 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_modular/flutter_modular_test.dart';
 
-import 'package:milkk/app/modules/learn_chinese/learn_chinese_page.dart';
 
 main() {
-  testWidgets('LearnChinesePage has title', (WidgetTester tester) async {
-    await tester.pumpWidget(
-        buildTestableWidget(LearnChinesePage(title: 'LearnChinese')));
-    final titleFinder = find.text('LearnChinese');
-    expect(titleFinder, findsOneWidget);
-  });
+  // testWidgets('LearnChinesePage has title', (WidgetTester tester) async {
+  //   await tester.pumpWidget(
+  //       buildTestableWidget(LearnChinesePage(title: 'LearnChinese')));
+  //   final titleFinder = find.text('LearnChinese');
+  //   expect(titleFinder, findsOneWidget);
+  // });
 }
