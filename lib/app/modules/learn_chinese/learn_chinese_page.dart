@@ -29,11 +29,11 @@ class _LearnChinesePageState
             right: 0,
             child: Container(
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("images/paper.jpg"),
-                    fit: BoxFit.cover,
-                  ),
-                  ),
+                image: DecorationImage(
+                  image: AssetImage("images/paper.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           Positioned(
@@ -57,10 +57,9 @@ class _LearnChinesePageState
             right: 0,
             child: PageView(
               controller: controller.pageController,
-
               children: [
-                ...[0, 1, 2].map((vav) => Container( 
-                  padding: EdgeInsets.only(left: 0, right: 42),
+                ...[0, 1, 2].map((vav) => Container(
+                      padding: EdgeInsets.only(left: 0, right: 42),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
@@ -121,7 +120,10 @@ class _LearnChinesePageState
                             size: 16,
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () {
+                          Modular.to.push(MaterialPageRoute(
+                              builder: (BuildContext context) => SelectText()));
+                        },
                       ),
                     ),
                   ),
@@ -129,6 +131,175 @@ class _LearnChinesePageState
               ],
             ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class SelectText extends StatefulWidget {
+  @override
+  _SelectTextState createState() => _SelectTextState();
+}
+
+class _SelectTextState extends State<SelectText> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              color: Colors.grey[100],
+            ),
+          ),
+
+          Positioned(
+            top: 22,
+            left: 0,
+            right: 0,
+            child: SafeArea(
+              child: Text(
+                "Translater",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 8,
+            left: 8,
+            child: SafeArea(
+              child: BackButton(
+                
+              ),
+            ),
+          ),          Positioned(
+            top: MediaQuery.of(context).size.height / 7,
+            left: 0,
+            right: 0,
+            child: SafeArea(
+              child: Text(
+                "LOVE",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 42,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: MediaQuery.of(context).size.height / 2.6 - 16,
+            left: 24,
+            right: 24,
+            bottom: 12,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.all(Radius.circular(24)),
+              ),
+            ),
+          ),
+          Positioned(
+            top: MediaQuery.of(context).size.height / 2.6,
+            left: 12,
+            right: 12,
+            bottom: 12,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.all(Radius.circular(24)),
+              ),
+              child: Column(
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: SizedBox(),
+                  ),
+                  Text(
+                    "爱",
+                    style: GoogleFonts.maShanZheng(
+                        color: Colors.white, fontSize: 156),
+                  ),
+                  Text(
+                    "ài",
+                    style: TextStyle(
+                      color: Colors.grey[600], fontSize: 24, // button color
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        ClipOval(
+                          child: Material(
+                            color: Colors.grey[900], // button color
+                            child: InkWell(
+                              splashColor: Colors.white, // inkwell color
+                              child: SizedBox(
+                                width: 64,
+                                height: 64,
+                                child: Icon(
+                                  Icons.star,
+                                  color: Colors.white,
+                                  size: 32,
+                                ),
+                              ),
+                              onTap: () {},
+                            ),
+                          ),
+                        ),
+                        ClipOval(
+                          child: Material(
+                            color: Colors.grey[900], // button color
+                            child: InkWell(
+                              splashColor: Colors.white, // inkwell color
+                              child: SizedBox(
+                                width: 64,
+                                height: 64,
+                                child: Icon(
+                                  Icons.headset,
+                                  color: Colors.white,
+                                  size: 32,
+                                ),
+                              ),
+                              onTap: () {},
+                            ),
+                          ),
+                        ),
+                        ClipOval(
+                          child: Material(
+                            color: Colors.grey[900], // button color
+                            child: InkWell(
+                              splashColor: Colors.white, // inkwell color
+                              child: SizedBox(
+                                width: 64,
+                                height: 64,
+                                child: Icon(
+                                  Icons.share,
+                                  color: Colors.white,
+                                  size: 32,
+                                ),
+                              ),
+                              onTap: () {},
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
